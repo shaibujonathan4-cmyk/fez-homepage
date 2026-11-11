@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | FEZ Fae'ezha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="announcement-bar">A WORLD OF TIMELESS ELEGANCE</div>
+
+    <header class="header" id="header">
+        <div class="header-inner">
+            <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+                <span></span><span></span>
+            </button>
+            <a href="index.html" class="brand">
+                <span class="brand-name">FEZ</span>
+                <span class="brand-subtitle">FAE'EZHA</span>
+            </a>
+            <nav class="navigation" id="navigation">
+                <a href="index.html">Home</a>
+                <a href="collections.html">Collections</a>
+                <a href="categories.html">Categories</a>
+                <a href="about.html">Our Story</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <a href="contact.html" class="header-cta">GET IN TOUCH <span>↗</span></a>
+        </div>
+    </header>
+
+    <main class="product-page">
+        <a href="javascript:history.back()" class="product-back">← BACK TO COLLECTION</a>
+
+        <section class="product-layout">
+            <div class="product-photo">
+                <img id="productImage" src="assets/hero/hero-image.jpg" alt="FEZ fashion design">
+            </div>
+
+            <div class="product-information">
+                <span class="eyebrow">FEZ FAE'EZHA / THE COLLECTION</span>
+                <h1 id="productName">Discover Your Style</h1>
+                <p id="productDescription" class="product-description">
+                    A distinctive expression of elegance and personal style.
+                </p>
+
+                <div class="product-price">
+                    <span>SAMPLE PRICE</span>
+                    <strong id="productPrice">Price on Request</strong>
+                </div>
+
+                <form id="orderForm" class="order-card">
+                    <h2>Make This Yours</h2>
+                    <p>Choose your preferred size and tell us how you'd like your design.</p>
+
+                    <label for="productSize">Select Size</label>
+                    <select id="productSize" required>
+                        <option value="">Choose your size</option>
+                        <option>XS</option>
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                        <option>XL</option>
+                        <option>XXL</option>
+                        <option>Custom Measurements</option>
+                    </select>
+
+                    <label for="productQuantity">Quantity</label>
+                    <input type="number" id="productQuantity" min="1" max="20" value="1" required>
+
+                    <label for="orderNotes">Additional Instructions</label>
+                    <textarea id="orderNotes" rows="4" placeholder="Tell us about your preferred colour, measurements or any special requests..."></textarea>
+
+                    <button type="submit" class="order-submit">REQUEST THIS DESIGN ↗</button>
+                    <small class="order-note">Our team will confirm availability, pricing and delivery details.</small>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="page-footer">
+        <a href="index.html">FEZ FAE'EZHA</a>
+        <p>Elegance is an attitude.</p>
+        <small>© <span class="year"></span> FEZ Fae'ezha</small>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/product.js"></script>
+</body>
+</html>
