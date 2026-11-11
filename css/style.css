@@ -1817,3 +1817,122 @@ h2 em {
     letter-spacing: 2px;
     color: var(--gold);
 }
+
+/* FEZ product card spacing correction */
+.sample-section .page-card {
+    height: auto;
+    min-width: 0;
+    overflow: visible;
+}
+
+.sample-section .page-card-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0;
+    height: auto;
+    flex: none;
+    padding: 18px 2px 30px;
+    box-sizing: border-box;
+}
+
+.sample-section .page-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    margin: 0 0 12px;
+}
+
+.sample-section .page-card-meta h3 {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.sample-section .page-card-meta .price-tag {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.sample-section .page-card-content > p {
+    margin: 0;
+    line-height: 1.7;
+    overflow-wrap: break-word;
+}
+
+
+/* Fix nested product metadata spacing */
+.sample-section .page-card .page-card-meta {
+    padding: 0;
+    min-width: 0;
+    flex: none;
+}
+
+.sample-section .page-card .page-card-content {
+    padding: 18px 2px 30px;
+    min-width: 0;
+}
+
+.sample-section .page-card .page-card-content > p {
+    padding: 0;
+    margin: 0;
+    position: static;
+    display: block;
+    height: auto;
+    min-height: 0;
+}
+
+
+/* Mobile product card metadata layout */
+@media (max-width: 760px) {
+    .sample-section .page-card-meta {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+        margin-bottom: 14px;
+    }
+
+    .sample-section .page-card-meta h3 {
+        width: 100%;
+        font-size: 27px;
+        line-height: 1.2;
+    }
+
+    .sample-section .page-card-meta .price-tag {
+        white-space: normal;
+        font-size: 10px;
+    }
+
+    .sample-section .page-card-content {
+        padding-bottom: 25px;
+    }
+}
+
+@media (max-width: 760px) {
+    .sample-section .page-card-meta {
+        gap: 4px;
+        margin-bottom: 4px;
+    }
+
+    .sample-section .page-card-content > p {
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
+@media (max-width: 760px) {
+    .sample-section .page-card-meta {
+        gap: 1px;
+        margin-bottom: 0;
+    }
+
+    .sample-section .page-card-content > p {
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+    }
+}
