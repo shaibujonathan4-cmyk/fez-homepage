@@ -785,8 +785,63 @@ h2 em {
     line-height: 2;
 }
 
+
 .contact-section .eyebrow {
     color: #c2a982;
+}
+
+/* Contact action buttons */
+.contact-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 38px;
+}
+
+.contact-actions .button {
+    min-width: 205px;
+    min-height: 54px;
+    text-decoration: none;
+}
+
+.button-whatsapp {
+    background: #168b50;
+    color: #fff;
+}
+
+.button-whatsapp:hover {
+    background: #11713f;
+    color: #fff;
+}
+
+.button-appointment {
+    background: var(--gold);
+    color: #fff;
+}
+
+.button-appointment:hover {
+    background: #b99a6b;
+    color: #fff;
+}
+
+.contact-us-link {
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    padding: 15px 10px;
+    transition: color 0.3s ease;
+}
+
+.contact-us-link:hover {
+    color: var(--gold);
+}
+
+.contact-us-link span {
+    margin-left: 8px;
 }
 
 
@@ -826,6 +881,61 @@ h2 em {
     font-family: var(--heading);
     font-size: 19px;
     margin-top: 20px;
+}
+
+.footer-brand > .footer-location {
+    margin-top: 10px;
+    font-family: var(--body);
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.floating-whatsapp {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: #168b50;
+    color: #fff;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+    background: #11713f;
+    transform: translateY(-3px);
+}
+
+.floating-whatsapp strong {
+    font-size: 17px;
+}
+
+@media (max-width: 600px) {
+    .contact-actions {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 300px;
+        margin: 30px auto 0;
+    }
+
+    .contact-actions .button {
+        width: 100%;
+    }
+
+    .floating-whatsapp {
+        right: 15px;
+        bottom: 15px;
+        padding: 13px 16px;
+    }
 }
 
 .footer-column {
@@ -1935,4 +2045,244 @@ h2 em {
         padding: 0;
         line-height: 1.5;
     }
+}
+
+
+/* Floating WhatsApp: circular icon only */
+.floating-whatsapp {
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    background: #25D366;
+    box-shadow: 0 5px 20px rgba(0,0,0,.22);
+}
+
+.floating-whatsapp .whatsapp-icon {
+    width: 29px;
+    height: 29px;
+}
+
+.floating-whatsapp:hover {
+    background: #128C7E;
+}
+
+/* =========================================
+   FEZ ORDER CONFIRMATION
+   ========================================= */
+
+.order-confirmed {
+    overflow: hidden;
+}
+
+.order-success {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(12, 12, 12, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: fezFadeIn .35s ease;
+}
+
+.order-success-card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    padding: 55px 38px;
+    text-align: center;
+    color: #f8f5ee;
+    background: #171715;
+    border: 1px solid rgba(198, 164, 91, .55);
+    box-shadow: 0 25px 90px rgba(0, 0, 0, .55);
+    animation: fezRise .45s ease;
+}
+
+.order-success-card::before,
+.order-success-card::after {
+    content: "";
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c6a45b, transparent);
+}
+
+.order-success-card::before {
+    top: 15px;
+}
+
+.order-success-card::after {
+    bottom: 15px;
+}
+
+.success-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 28px;
+    color: #c6a45b;
+    border: 1px solid #c6a45b;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.order-success-card .eyebrow {
+    color: #c6a45b;
+    letter-spacing: 4px;
+    font-size: 10px;
+}
+
+.order-success-card h2 {
+    margin: 22px 0 18px;
+    color: #fff;
+    font-family: "Italiana", serif;
+    font-size: clamp(34px, 7vw, 48px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.order-success-card h2 em {
+    color: #c6a45b;
+    font-style: normal;
+}
+
+.order-success-card > p {
+    max-width: 340px;
+    margin: 0 auto 25px;
+    color: #c5c0b6;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.success-reference {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin: 28px 0;
+    padding: 20px;
+    background: rgba(198, 164, 91, .07);
+    border: 1px solid rgba(198, 164, 91, .35);
+}
+
+.success-reference span {
+    color: #c6a45b;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+.success-reference strong {
+    color: #fff;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.order-success-card .success-note {
+    margin-bottom: 28px;
+    font-size: 11px;
+    color: #89857d;
+}
+
+.success-button {
+    width: 100%;
+    min-height: 54px;
+    padding: 15px 20px;
+    color: #171715;
+    background: #c6a45b;
+    border: 1px solid #c6a45b;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.success-button:hover {
+    color: #c6a45b;
+    background: transparent;
+}
+
+.success-button span {
+    margin-left: 8px;
+}
+
+.order-success-card small {
+    display: block;
+    margin-top: 22px;
+    color: #89857d;
+    font-size: 11px;
+}
+
+.order-success-card small span {
+    color: #c6a45b;
+    font-weight: 700;
+}
+
+@keyframes fezFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fezRise {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .order-success {
+        padding: 16px;
+    }
+
+    .order-success-card {
+        padding: 45px 23px;
+    }
+}
+
+
+/* Compact Instagram footer link */
+.footer-column a[href*="instagram.com"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.footer-column a[href*="instagram.com"] .instagram-icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+/* Instagram footer button — same size as floating WhatsApp */
+.footer-column a[href*="instagram.com"] {
+    display: inline-flex;
+    width: 58px;
+    height: 58px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    color: #fff;
+    font-size: 0;
+}
+
+.footer-column a[href*="instagram.com"] .instagram-icon {
+    width: 27px;
+    height: 27px;
 }

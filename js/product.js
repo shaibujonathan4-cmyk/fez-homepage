@@ -22,11 +22,14 @@ const orderForm = document.getElementById("orderForm");
 orderForm.addEventListener("submit", function(event) {
     event.preventDefault();
 
+    const customerName = document.getElementById("customerName").value.trim();
+    const customerPhone = document.getElementById("customerPhone").value.trim();
     const size = document.getElementById("productSize").value;
     const quantity = Number(document.getElementById("productQuantity").value);
     const notes = document.getElementById("orderNotes").value.trim();
 
-    if (!size || !Number.isInteger(quantity) || quantity < 1) {
+    if (!customerName || !customerPhone || !size ||
+        !Number.isInteger(quantity) || quantity < 1) {
         alert("Please select a size and enter a valid quantity.");
         return;
     }
@@ -35,7 +38,10 @@ orderForm.addEventListener("submit", function(event) {
 
     const order = {
         reference,
+        customerName,
+        customerPhone,
         design: productName,
+        description: productDescription,
         image: productImage,
         price: productPrice,
         size,
@@ -51,6 +57,33 @@ orderForm.addEventListener("submit", function(event) {
     } catch (error) {
         console.warn("This order could not be saved locally.", error);
     }
+
+    const imageUrl = new URL(productImage, window.location.href).href;
+
+    const whatsappMessage = [
+        "NEW FEZ FAE'EZHA ORDER",
+        "",
+        "Order Reference: " + reference,
+        "",
+        "CUSTOMER DETAILS",
+        "Name: " + customerName,
+        "Phone: " + customerPhone,
+        "",
+        "DESIGN DETAILS",
+        "Design: " + productName,
+        "Description: " + productDescription,
+        "Image: " + imageUrl,
+        "Price: " + productPrice,
+        "Size: " + size,
+        "Quantity: " + quantity,
+        "Instructions: " + (notes || "None"),
+        "",
+        "Please contact the customer to confirm this order."
+    ].join("\\n");
+
+    const whatsappUrl =
+        "https://wa.me/2347062983477?text=" +
+        encodeURIComponent(whatsappMessage);
 
     const confirmation = document.createElement("div");
     confirmation.className = "order-success";
@@ -69,6 +102,10 @@ orderForm.addEventListener("submit", function(event) {
                 <strong>${reference}</strong>
             </div>
             <p class="success-note">This is a sample order confirmation for the website preview.</p>
+            <a href="${whatsappUrl}" target="_blank" rel="noopener"
+               class="success-button whatsapp-order-button">
+                SEND ORDER TO FEZ <span>↗</span>
+            </a>
             <button type="button" class="success-button" id="continueShopping">
                 CONTINUE SHOPPING <span>↗</span>
             </button>
